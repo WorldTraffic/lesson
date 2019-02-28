@@ -74,7 +74,6 @@ $color = red;
 ?>
 <? drawTable(); ?>
 <? rows(); ?>
-<? //cols(); ?>
 
 
 </section>
