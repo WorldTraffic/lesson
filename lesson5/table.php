@@ -27,7 +27,6 @@ section {
 	padding:5px;
 }
 table {
-	background: #FFFFAD;
 	margin:auto;
 }
 table tr {
@@ -50,32 +49,26 @@ table td {
 function drawTable() {
 $cols = 1;
 $rows = 1;
+$color = yellow;
 $x=1;
 $y=1;
-$color = red;
-        function rows(){
-			echo '<table>'."\n";
-               echo '<tr>'."\n";
-					for($rows=1;$rows<=10;$rows++){
-					for($cols=1;$cols<=10;$cols++){
-                    echo '<td>';
-					$x=$cols*$rows;
-					echo $x;
-					echo '</td>'."\n";
-					if ($cols == 10){
-						echo '</tr>'."\n";
-					}
+	echo '<table style="background:#FFFFAD">'."\n";
+		echo '<tr>'."\n";
+			for($rows=1;$rows<=10;$rows++){
+				for($cols=1;$cols<=10;$cols++){
+					echo '<td>';
+						$x=$cols*$rows;
+							echo $x;
+							echo '</td>'."\n";
+								if ($cols == 10){
+									echo '</tr>'."\n";
+								}
 				}
-
-            }
-		echo '</table>'."\n";
-        }
+			}
+	echo '</table>'."\n";
 }
 ?>
 <? drawTable(); ?>
-<? rows(); ?>
-
-
 </section>
 
 </body>
