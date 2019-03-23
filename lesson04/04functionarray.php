@@ -3,6 +3,6 @@
 	for($arr['min'];$arr['min']<$arr['max'];$arr['min']++){
 		$array[]=3*pow($arr['min'],2)+$arr['min']-4;
 	} 
-	echo 'Минимальное значение функции '.min($array).'<br>';
-	echo 'Миксимальное значение функции '.max($array).'<br>';
+	echo 'Минимальное значение функции y='.min($array).'<br>';
+	echo 'Миксимальное значение функции y='.max($array).'<br>';
 ?>
