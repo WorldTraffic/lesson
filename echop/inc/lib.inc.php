@@ -24,8 +24,13 @@
 	}
 	function saveBasket(){
 		global $basket;
+		if(isset($_COOKIE['counts'])){
+			$counts = $_COOKIE['counts'];
+		} 
+		$counts++;
 		$basket=base64_encode(serialize($basket));
 		setcookie('basket','$basket','0x7FFFFFFF');
+		setcookie('counts',$counts,'0x7FFFFFFF');
 	}
 	function basketInit(){
 		global $basket, $count;
@@ -40,9 +45,6 @@
 	function add2Basket($id){
 		global $basket;
 		$basket['$id']=1;
-		if($basket!=0){
-			$coutn++;
-		}
 		saveBasket();
 	}
 	function myBasket(){

@@ -1,7 +1,10 @@
-<?php
+<?
 	// подключение библиотек
-	require "inc/lib.inc.php";
-	require "inc/db.inc.php";
+	require('./inc/lib.inc.php');
+	require('./inc/db.inc.php');
+		if(isset($_COOKIE['counts'])){
+		setcookie('counts',$counts,'0');
+		} 
 	?>
 <html>
 <head>
@@ -9,7 +12,7 @@
 </head>
 <body>
 	<h1>Ваша корзина</h1>
-<?php
+<?
 if (myBasket()==false){
 echo "<h1>Корзина пуста<h1>";
 ?>
@@ -17,10 +20,10 @@ echo "<h1>Корзина пуста<h1>";
 	<input type="button" value="Вернутся в каталог"
                       onClick="location.href='catalog.php'" />
 </div>
-<?php exit;
+<? exit;
 }
 ?>
-<?php
+<?
 myBasket();
 $i=0; //порядковый номер
 $sum=0; //общая сумма заказа
@@ -35,26 +38,26 @@ $sum=0; //общая сумма заказа
 	<th>Количество</th>
 	<th>Удалить</th>
 </tr>
-<?php
+<?
 $goods2=myBasket();
 foreach($goods2 as $item){
 	$i++;
 	$sum+=$item['price'];
 	?>
 	<tr>
-		<td><?php echo $i ?></td>
+		<td><? echo $i ?></td>
 		<td><?=$item['title']?></td>
 		<td><?=$item['author']?></td>
 		<td><?=$item['pubyear']?></td>
 		<td><?=$item['price']?></td>
-		<td><?php echo 1?></td>
-		<td><a href="http://eshop/delete_from_basket.php?id=eshop&del=<?php echo $item['id'] ?> ">Удалить с корзины</a></td>
+		<td><? echo 1?></td>
+		<td><a href="http://eshop/delete_from_basket.php?id=eshop&del=<? echo $item['id'] ?> ">Удалить с корзины</a></td>
 		
 <?}	
 ?>
 </table>
 
-<p>Всего товаров в корзине на сумму: грн. <?php echo $sum?></p>
+<p>Всего товаров в корзине на сумму: грн. <? echo $sum?></p>
 
 <div align="center">
 	<input type="button" value="Оформить заказ!"
